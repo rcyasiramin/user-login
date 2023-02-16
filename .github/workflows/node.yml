@@ -1,0 +1,13 @@
+name: restartServer
+on: [push]
+jobs:
+ check-bats-version:
+   runs-on: ubuntu-latest
+   steps:
+  #   - run: |
+   #      curl --location --request POST 'https://api.gotestpro.com:8443/rcteaf-api/api/external/cicd/execute/1458529?apiKey=0d75f2beacac4fce96e95522658bd0c4' \
+     - name: Deploy Stage
+       uses: fjogeleit/http-request-action@v1
+       with:
+        url: 'http://dev-gtp.royalcyber.org:8081/rcteaf-api/api/external/cicd/execute/job/454499'
+        method: 'GET'
